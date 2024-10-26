@@ -1,4 +1,5 @@
 const db = require("../db/queries");
+const path = require("path");
 
 async function getUsernames(req, res) {
   const usernames = await db.getAllUsernames();
@@ -7,7 +8,7 @@ async function getUsernames(req, res) {
 }
 
 async function createUsernameGet(req, res) {
-  console.log("createusername")
+  res.sendFile(path.join(__dirname, "../views/form.html"))
 }
 
 async function createUsernamePost(req, res) {
